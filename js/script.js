@@ -1,5 +1,6 @@
 // inizializzo le variabili
 const teamContainer = document.querySelector('.team-container');
+const addBtn = document.getElementById('addMemberButton');
 
 // creo l'object contenente le informazioni
 const infoMembers = [
@@ -35,7 +36,7 @@ const infoMembers = [
     },
 ]
 
-
+// attraverso il for aggiungo all'HTML i membri che ho a disposizione
 for(let i = 0; i<=5; i++) {
     teamContainer.innerHTML +=     
     `<div class="team-card">
@@ -43,8 +44,27 @@ for(let i = 0; i<=5; i++) {
             <img src="${infoMembers[i].img}" alt="${infoMembers[i].name}" />
         </div>
         <div class="card-text">
-            <h3>${infoMembers[i].nome}</h3>
+            <h3>${infoMembers[i].name}</h3>
             <p>${infoMembers[i].role}</p>
+        </div>
+    </div>`
+}
+
+// se si preme il btn add
+addBtn.addEventListener('click', newMember)
+
+function newMember() {
+    const newMemberImg = document.getElementById('image').value;
+    const newMemberName = document.getElementById('name').value;
+    const newMemberRole = document.getElementById('role').value;
+    teamContainer.innerHTML += 
+    `<div class="team-card">
+        <div class="card-image">
+            <img src="img/${newMemberImg}" alt="newMemberImg" />
+        </div>
+        <div class="card-text">
+            <h3>${newMemberName}</h3>
+            <p>${newMemberRole}</p>
         </div>
     </div>`
 }
