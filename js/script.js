@@ -1,3 +1,5 @@
+// con il form nell'html do la possbilità di aggiungere nuovi membri del team 
+
 // inizializzo le variabili
 const teamContainer = document.querySelector('.team-container');
 const addBtn = document.getElementById('addMemberButton');
